@@ -221,8 +221,9 @@ def massgrowth_pop(initial_mass,initial_time,initial_loc,st,flux,eta_pp):
             # efficiency
             qp=M/Mstar # planet-star mass ratio
             #planet mass/ location, human units induvidually dimensionless over all
-            Rp= (((3 /(4*np.pi)))*(((2/3) * m_rock /rho_rock) + ((1/3) *m_rock /rho_metal)+ (m_ice/rho_ice)))**(1/3)/loc  
-            eps=OL18.epsilon_general( qp=qp,tau=tau, alphaz=alphaz, hgas=hgas, eta=eta, Rp=Rp)  # efficiency
+            Rp= (((3 /(4*np.pi)))*(((2/3) * m_rock /rho_rock) + ((1/3) *m_rock /rho_metal)+ (m_ice/rho_ice)))**(1/3)/loc
+            # http://adsabs.harvard.edu/abs/2018A%26A...615A.138L for paper on epsilom_general
+            eps=OL18.epsilon_general( qp=qp,tau=tau, alphaz=alphaz, hgas=hgas, eta=eta, Rp=Rp)  
             
             dt=np.minimum((mass_step*M)/(eps*fflux), dtt)  # all values in human units
             
@@ -282,6 +283,7 @@ def planet_pop(initial_mass):
     ax.set_ylabel('Mass [M$_{\oplus}$]')
     ax.set_xlabel('Orbital Radius [Au]')
 
+    # https://github.com/astrojoanna/pebble-predictor/tree/v1.0 for pebble predictor code
     st_pp,flux_pp,eta_pp=pebble_predictor(rgrid=rgrid,tgrid=timegrid,
                                                  Mstar=m_host,SigmaGas=SigmaGas,
                                                  T=T,SigmaDust=SigmaDust,
