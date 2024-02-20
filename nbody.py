@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-This code solves the n body probel using a velocity verlet integrator. It
+This code solves the n body problem using a velocity verlet integrator. It
 caluculates the energy as angular momentum of the system at each timestep.
 """
 
