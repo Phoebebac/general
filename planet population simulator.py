@@ -14,7 +14,6 @@ import numpy as np
 from astropy import constants as c
 import matplotlib.pyplot as plt
 from scipy.interpolate import RegularGridInterpolator
-#import time
 from scipy import interpolate
 import OL18
 import winsound
