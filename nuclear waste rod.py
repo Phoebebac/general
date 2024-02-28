@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Jan 30 11:40:09 2024
-
+This was done by translating the method put forth in 'Numerical Solutions of Partial Differential Equations (2011) by Louise Olsen-Kettle,
+University of Queensland' into code.
 @author: Phoeb
 """
 
